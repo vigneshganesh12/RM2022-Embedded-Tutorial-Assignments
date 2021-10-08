@@ -2,9 +2,17 @@
 #include <iostream>
 using namespace std;
 
+struct times{
+    int day;
+    int hour;
+    int min;
+    int sec;
+
+};
 // the starting of program
 int main()
 {
+    struct times T;
     // the input, number of seconds
     long secRaw = 0;
 
@@ -16,10 +24,10 @@ int main()
     cin >> secRaw;
 
     /* Write your code under this line */
-    // day = ?
-    // hour = ?
-    // min = ?
-    // sec = ?
+    day = secRaw/86400;
+    hour = ((secRaw%86400)/3600);
+    min = ((secRaw%86400)%3600)/60;
+    sec = ((secRaw%86400)%3600)%60;
     /* Write your code above this line */
 
     // output the result

@@ -1,6 +1,9 @@
 // I/O stream library from std, for using cin and cout
 #include <iostream>
+#include<cmath>
 using namespace std;
+
+
 
 // the starting of program
 int main()
@@ -16,9 +19,10 @@ int main()
     cin >> hourRaw;
 
     /* Write your code under this line */
-    // hour = ?
-    // min = ?
-    // sec = ?
+    hour = int(hourRaw);
+    min = int((hourRaw-hour)*60);
+    sec =round((((hourRaw-hour)*60)-(min))*60);
+    cout<<(((hourRaw-hour)*60)-(min))*60<<endl;
     /* Write your code above this line */
 
     // output the result

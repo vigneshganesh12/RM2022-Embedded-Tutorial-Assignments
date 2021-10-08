@@ -16,25 +16,76 @@ Before doing this assignment, you should already know the following things:
    - Replace one char with another in a string(array of char) and return the number of replacements. Below is the function prototype in header file.
      ```c
      // replace all a in str with b, len is the length of the string 
-     int replace(char str[], int len, char a, char b);
+     #include<iostream>
+     #include<cmath>
+
+     int replace(char str[], int len, char a, char b){
+        int rep=0;
+        for (int i=0;i<len;i++){
+           if (arr[i]==a){
+              arr[i]=b
+              rep++;
+           }
+        }
+        return rep;
+     }
+
+     int main(){
+        char str[],a,b;
+        int len,rep;
+        rep=replace(str,len,a,b,);
+     }
      ```
    - Convert Cartesian coordinates(x, y) to polar coordinates($\rho, \theta$), use `sqrt(x)` to find square root of x and `atan(y)` to find the inverse trigonometric, which is arctangent of y. Below is the struct and function prototype in header file.
      ```c
-     // struct of cartesian coordinates
-     struct Cartesian {
-        float x;
-        float y;
-     };
-     // struct of polar coordinates
-     struct Polar {
-        float x;
-        float y;
-     };
-     // Convert Cartesian coordinates to polar coordinates
-     Polar cartesian2Polar(Cartesian pos);
-     ```
+#include <iostream>
+#include <cmath>
+
+struct Cartesian {
+	float x;
+	float y;
+};
+// struct of polar coordinates
+struct Polar {
+	float x;
+	float y;
+};
+
+Polar cartesian2polar(Cartesian P) {
+	Polar A;
+	float r = float(sqrt(pow(P.x, 2) + pow(P.y, 2)));
+	float theta = atan(P.y / P.x)*float(180/3.14);
+	A.x = r;
+	A.y = theta;
+	return A;
+
+}
+
+using namespace std;
+int main() {
+
+	float x, y;
+	struct Cartesian Cart;
+	cout << "Enter the value of x" << endl;
+	cin >> x;
+	cout << "Enter the value of y" << endl;
+	cin >> y;
+	Cart.x = x;
+	Cart.y = y;
+	struct Polar Pol;
+	Pol = cartesian2polar(Cart);
+	cout << "Polar coordinates are " << Pol.x << " " << Pol.y << endl;
+	
+	
+	return 0;
+}
 
 2. Briefly describe the benefits of putting the function prototype in the header file.
+A.  1.Allows the programmer to know the type of function (void, int, bool, etc).
+    2. The general description of what the function will do in the main function.
+    3. Notifies which arguments are passed and their purpose in the function. 
+    4. Allows easier reading since functions are named using readable titles.
+    5. Multiple uses of the same function.
 
 ## Programing Exercise
 

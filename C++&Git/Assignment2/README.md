@@ -20,9 +20,17 @@ while (++j < 9) {
    cout << j++ << endl;
 }
 ```
+Output:
+1
+3
+5
+7
 
 2. Write a loop that will output from 2 to the power of 1 to 2 to the power of 10. The output should look like: `2 4 8 16 32 64 128 256 512 1024`
 
+for (int i=1;i<=10;i++){
+   cout<<pow(2,i)<<" ";
+}
 3. Read the following code. Rewrite it without `break` and `continue`
 ```c
 // you should run this program yourself first to understand it
@@ -40,8 +48,8 @@ while (cin.get(ch)) {
 ```
 Hint: your code should look like this:
 ```c
-while (conditions) {
-   if (conditions) {
+while (cin.get(ch)&&ch!=Q) {
+   if (ch!='\n') {
       line++;
    }
 }
